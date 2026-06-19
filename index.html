@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Valle del Mantaro | Lotes de Campo en Sicaya</title>
+    <!-- Tailwind CSS para diseño fluido y ultra moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para tipografía elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos oficiales de Redes Sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#f4f7f6',
+                            100: '#e3ebea',
+                            500: '#1b3d33', // Verde bosque corporativo
+                            600: '#153028',
+                            900: '#0a1714',
+                        },
+                        bronze: {
+                            50: '#fdfbf7',
+                            100: '#f9f3eb',
+                            500: '#c58e5a', // Tono acento arcilla/tierra cálida
+                            600: '#ae7846',
+                        },
+                        sand: '#faf8f5', // Fondo crema claro premium
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c58e5a;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #ae7846;
+        }
+        /* Transición de Opacidad Suave para Cambio Dinámico */
+        .fade-transition {
+            transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-sand text-slate-800 font-sans leading-relaxed">
+
+    <!-- MODAL / POP-UP DE LANZAMIENTO ANUNCIADO (COMUNICADO DE ENTRADA) -->
+    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-all duration-500 opacity-0 pointer-events-none">
+        <div id="modal-card" class="relative w-full max-w-2xl bg-white rounded-3xl overflow-hidden shadow-2xl transform scale-95 transition-all duration-500 ease-out border border-white/10">
+            <!-- Botón Cerrar (X) -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <!-- Banner Visual del Comunicado -->
+            <div class="relative h-64 sm:h-80 bg-forest-900 text-white overflow-hidden">
+                <!-- Imagen de fondo de Sicaya para el Pop-up -->
+                <img src="image_9da7c5.jpg" alt="Lanzamiento Preventa Valle del Mantaro" class="absolute inset-0 w-full h-full object-cover opacity-70" onerror="this.src='https://placehold.co/800x450/1b3d33/ffffff?text=Valle+Sicaya'">
+                <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-forest-900/40 to-transparent"></div>
+                
+                <div class="absolute bottom-6 left-6 right-6 z-10">
+                    <span class="bg-bronze-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block mb-2 border border-bronze-500/20">PREVENTA EXCLUSIVA EN SICAYA</span>
+                    <h3 class="font-serif text-2xl sm:text-4xl font-bold leading-tight">Proyecto "Valle Sicaya"<br>Etapas I, II y III</h3>
+                    <p class="text-xs sm:text-sm text-slate-200 mt-2"><i class="fa-solid fa-map-pin text-bronze-500 mr-1.5"></i>Lotes residenciales listos para inversión al contado en Huancayo, Junín</p>
+                </div>
+            </div>
+            
+            <!-- Cuerpo Informativo del Comunicado -->
+            <div class="p-6 sm:p-8 space-y-5 bg-white">
+                <div class="flex items-start gap-4 bg-bronze-100/40 p-4 rounded-2xl border border-bronze-500/20">
+                    <span class="w-12 h-12 rounded-xl bg-bronze-500 text-white flex items-center justify-center text-xl shrink-0 shadow-lg shadow-bronze-500/10">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <div>
+                        <h4 class="font-bold text-forest-900 text-sm sm:text-base">Precios Especiales de Lanzamiento</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">Elige hoy mismo tu lote al contado desde S/ 8,800. Agenda tu visita guiada al terreno y asegura un bono de descuento de S/ 2,000 en tu compra.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <button onclick="closeModal()" class="w-full border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all text-center">
+                        Ver Planos
+                    </button>
+                    <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20deseo%20asistencia%20e%20informaci%C3%B3n%20sobre%20las%20etapas%20de%20preventa%20en%20Valle%20Sicaya." target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 text-center">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>Me Interesa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20deseo%20recibir%20informaci%C3%B3n%20sobre%20los%20lotes%20disponibles%20en%20el%20Valle%20del%20Mantaro." target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 duration-300">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="bg-forest-900/95 text-white sticky top-0 z-40 backdrop-blur-md border-b border-forest-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <div class="flex items-center">
+                    <!-- Marca oficial según boceto image_907546.png -->
+                    <div class="flex flex-col select-none">
+                        <span class="text-[10px] sm:text-xs tracking-[0.25em] uppercase font-bold text-white/90 leading-none mb-1.5 font-sans">Inmobiliaria</span>
+                        <h1 class="font-serif text-xl sm:text-3xl font-extrabold tracking-wider text-bronze-500 leading-none">
+                            VALLE DEL <span class="text-white font-light">MANTARO</span>
+                        </h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-bronze-500 transition-colors">Inicio</a>
+                    <a href="#proyectos" class="hover:text-bronze-500 transition-colors">Proyectos</a>
+                    <a href="#masterplan" class="hover:text-bronze-500 transition-colors">Mapa de Lotes</a>
+                    <a href="#beneficios" class="hover:text-bronze-500 transition-colors">Amenidades</a>
+                    <a href="#redes" class="hover:text-bronze-500 transition-colors">Comunidad</a>
+                </div>
+                <div>
+                    <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20me%20gustar%C3%ADa%20agendar%20una%20visita%20guiada%20a%20los%20proyectos%20de%20lotes%20en%20Sicaya." target="_blank" class="bg-bronze-500 hover:bg-bronze-600 text-white px-4 py-2.5 sm:px-5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-bronze-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Agendar Visita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO -->
+    <header id="inicio" class="relative bg-forest-900 text-white py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-50">
+            <!-- Imagen panorámica del Valle del Mantaro como portada principal -->
+            <img src="image_9e8468.jpg" alt="Vista Panorámica del Valle del Mantaro" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1920x1080/1b3d33/ffffff?text=Valle+del+Mantaro'">
+            <div class="absolute inset-0 bg-gradient-to-r from-forest-900 via-forest-900/85 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:w-2/3">
+                <span class="text-bronze-500 font-semibold tracking-wider uppercase text-xs sm:text-sm bg-bronze-500/10 px-3 py-1.5 rounded-full inline-block mb-4 border border-bronze-500/20">Proyectos Premium en Sicaya - Venta Directa</span>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
+                    Construye tu futuro en tu lote <span class="text-bronze-500 italic">propio</span>.
+                </h1>
+                <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-xl">
+                    Lotes residenciales planos en Sicaya con alta plusvalía garantizada. Adquiere de forma 100% segura al contado y sé dueño del mejor clima andino.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="#proyectos" class="bg-bronze-500 hover:bg-bronze-600 text-white px-8 py-4 rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-bronze-500/30 transform hover:-translate-y-1 text-sm sm:text-base">
+                        <i class="fa-solid fa-map-location-dot mr-2"></i>Explorar Proyectos
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                    <div>
+                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">100m²</p>
+                        <p class="text-xs sm:text-sm text-slate-400">Áreas de lotes desde</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">S/ 8,800</p>
+                        <p class="text-xs sm:text-sm text-slate-400">Precios de preventa al contado</p>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">Inmediata</p>
+                        <p class="text-xs sm:text-sm text-slate-400">Firma e Independización</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PROYECTOS / CONCEPTO MULTICAPA -->
+    <section id="proyectos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-500 mb-4">Proyectos Diseñados para Trascender</h2>
+            <p class="text-base sm:text-lg text-slate-600">Explora nuestras tres urbanizaciones exclusivas en Sicaya usando las flechas de navegación.</p>
+        </div>
+
+        <!-- CONTENEDOR CARRUSEL DINÁMICO (Estilo UNCP con flechas laterales de control) -->
+        <div class="relative bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100 overflow-hidden">
+            <!-- Botones de Navegación del Carrusel (Inspiración Flechas UNCP, Touch Targets optimizados) -->
+            <button onclick="prevProject()" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-forest-900/85 hover:bg-bronze-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110 active:scale-95 border border-white/20">
+                <i class="fa-solid fa-chevron-left text-lg"></i>
+            </button>
+            <button onclick="nextProject()" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-forest-900/85 hover:bg-bronze-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110 active:scale-95 border border-white/20">
+                <i class="fa-solid fa-chevron-right text-lg"></i>
+            </button>
+
+            <!-- Grid de Contenido de Diapositivas -->
+            <div class="grid lg:grid-cols-12 gap-8 items-center min-h-[460px] fade-transition" id="slide-container">
+                <!-- Columna Izquierda: Información del Proyecto Activo -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span id="proj-tag" class="bg-bronze-500/10 text-bronze-600 border border-bronze-500/20 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block mb-3">CONDOMINIO CAMPESTRE</span>
+                        <h3 id="proj-title" class="font-serif text-3xl sm:text-5xl font-black text-forest-500 tracking-tight">VALLE SICAYA I</h3>
+                    </div>
+                    
+                    <p id="proj-desc" class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Nuestra primera etapa completamente consolidada. Cuenta con vías afirmadas listas, delimitación física y alta velocidad de autoconstrucción. Ideal para inversores que buscan seguridad y consolidación inmediata en Huancayo.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="w-8 h-8 rounded-full bg-forest-100 flex items-center justify-center text-forest-500 font-bold text-xs shrink-0 mt-0.5">1</span>
+                            <div>
+                                <h4 class="font-bold text-forest-900 text-sm">Estado actual</h4>
+                                <p id="proj-feat1" class="text-xs text-slate-500">Etapa habilitada - 90% vendida</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-8 h-8 rounded-full bg-forest-100 flex items-center justify-center text-forest-500 font-bold text-xs shrink-0 mt-0.5">2</span>
+                            <div>
+                                <h4 class="font-bold text-forest-900 text-sm">Características clave</h4>
+                                <p id="proj-feat2" class="text-xs text-slate-500">Vías de acceso directo afirmadas y veredas delimitadas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indicadores de Carrousel de Proyecto (Estrellas / Puntos de navegación activa) -->
+                    <div class="flex gap-2 pt-4 justify-center lg:justify-start">
+                        <span onclick="setProject(0)" class="nav-indicator w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500"></span>
+                        <span onclick="setProject(1)" class="nav-indicator w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
+                        <span onclick="setProject(2)" class="nav-indicator w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Imagen del Proyecto -->
+                <div class="lg:col-span-7 relative">
+                    <div class="absolute -inset-4 bg-bronze-500/5 rounded-3xl -rotate-1 z-0"></div>
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px]">
+                        <img id="proj-img" src="image_90f868.jpg" alt="Terreno Sicaya" class="w-full h-full object-cover transition-all duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x500/1b3d33/ffffff?text=Terreno+Sicaya'">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-xl flex justify-between items-center border border-slate-100">
+                            <div>
+                                <span class="text-[10px] font-bold text-bronze-500 uppercase tracking-widest block mb-0.5">PRECIO EXCLUSIVO AL CONTADO</span>
+                                <span id="proj-price-badge" class="text-lg sm:text-2xl font-black text-forest-500 font-serif">Desde S/ 8,800</span>
+                            </div>
+                            <a href="#masterplan" class="bg-forest-500 hover:bg-forest-600 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-all transform hover:-translate-y-0.5">Ver Plano Completo <i class="fa-solid fa-arrow-down ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MAPA INTERACTIVO (MASTERPLAN) -->
+    <section id="masterplan" class="py-20 bg-forest-50/50 border-y border-forest-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-bronze-500 font-bold text-sm uppercase tracking-wider block mb-2">Disponibilidad en tiempo real</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-500">Planos de Lotización - <span id="map-title-project" class="text-bronze-500">VALLE SICAYA I</span></h2>
+                </div>
+                
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="filterLots('todos')" class="filter-btn active bg-forest-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition-all">Todos</button>
+                    <button onclick="filterLots('disponible')" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all">Disponibles</button>
+                    <button onclick="filterLots('separado')" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all">Separados</button>
+                    <button onclick="filterLots('vendido')" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all">Vendidos</button>
+                </div>
+            </div>
+
+            <!-- Estructura de 12 Columnas: 8 (Planos de Lotes) - 4 (Detalles del Lote Seleccionado) -->
+            <div class="grid lg:grid-cols-12 gap-6">
+                <!-- Grid de Lotes del Plano (Ocupa 8 de las 12 columnas) -->
+                <div class="lg:col-span-8 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-4 mb-6 gap-2">
+                            <span class="text-slate-500 text-xs sm:text-sm font-medium"><i class="fa-solid fa-circle-info mr-2 text-bronze-500"></i>Haz clic sobre un lote para ver dimensiones y precio al contado</span>
+                            <div class="flex gap-4 text-xs font-semibold">
+                                <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-emerald-500 rounded"></span>Disponible</span>
+                                <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-amber-500 rounded"></span>Separado</span>
+                                <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-rose-500 rounded"></span>Vendido</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-8 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar p-1" id="mapa-grid">
+                            <!-- JS genera los lotes de forma dinámica -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalles del Lote Seleccionado (Ocupa 4 de las 12 columnas) -->
+                <div class="lg:col-span-4 bg-forest-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute inset-0 opacity-10">
+                        <!-- Imagen de fondo del panel de detalles -->
+                        <img src="image_9da7c5.jpg" alt="Valle del Mantaro Huancayo" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="relative z-10 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span id="lote-status-badge" class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Disponible</span>
+                                <span class="text-slate-400 font-bold text-sm">MANZANA <span id="lote-mza" class="text-white text-lg">A</span></span>
+                            </div>
+
+                            <h3 class="font-serif text-3xl font-bold mb-6">Lote Nro. <span id="lote-num" class="text-bronze-500">01</span></h3>
+
+                            <div class="space-y-4 mb-8">
+                                <div class="flex justify-between border-b border-white/10 pb-2">
+                                    <span class="text-slate-400">Dimensión del Lote</span>
+                                    <span class="font-semibold"><span id="lote-area">100</span> m²</span>
+                                </div>
+                                <div class="flex justify-between border-b border-white/10 pb-2">
+                                    <span class="text-slate-400">Precio Total Contado</span>
+                                    <span class="font-semibold text-xl text-slate-300">S/ <span id="lote-precio">8,800</span></span>
+                                </div>
+                                <div class="flex justify-between border-b border-white/10 pb-2">
+                                    <span class="text-rose-400 font-semibold">Descuento Especial</span>
+                                    <span class="font-semibold text-rose-400">- S/ <span id="lote-descuento">2,000</span></span>
+                                </div>
+                                <div class="flex justify-between border-b border-white/10 pb-2 bg-emerald-950/40 p-2 rounded-lg">
+                                    <span class="text-emerald-400 font-bold">Precio Final</span>
+                                    <span class="font-bold text-2xl text-emerald-400">S/ <span id="lote-precio-final">6,800</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a id="lote-whatsapp-btn" href="#" target="_blank" class="w-full bg-bronze-500 hover:bg-bronze-600 text-white text-center py-4 rounded-xl font-bold block transition-colors duration-300 shadow-lg shadow-bronze-500/20">
+                                <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>Consultar Compra al Contado
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE GALERÍA DE AVANCES PANORÁMICA Y GIGANTE (TRASLADADA AQUÍ) -->
+    <section id="galeria-seccion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-bronze-500 font-bold text-sm uppercase tracking-wider block mb-2">Fotos del Proyecto</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-500">Galería de Avances Reales</h2>
+                <p class="text-base sm:text-lg text-slate-600">Explora de cerca la evolución de la habilitación de calles, trazado de veredas y el increíble entorno andino.</p>
+            </div>
+
+            <!-- Gran Contenedor del Slider Panorámico -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 group max-w-5xl mx-auto border border-slate-100 aspect-[16/10] sm:aspect-[16/8] lg:h-[520px]">
+                <img id="gallery-img" src="image_galeria_sicaya_1_1.jpg" alt="Avances Valle del Mantaro" class="w-full h-full object-cover transition-all duration-500" onerror="this.src='https://placehold.co/1000x600/1b3d33/ffffff?text=Avance+Valle+Sicaya'">
+                
+                <!-- Botones Flotantes de Navegación del Carrusel de Fotos -->
+                <button onclick="prevGalleryImage()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-bronze-500 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 border border-white/20 z-10">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </button>
+                <button onclick="nextGalleryImage()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-bronze-500 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 border border-white/20 z-10">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Puntos e Indicadores Inferiores -->
+            <div class="flex justify-center gap-2 mt-6">
+                <span onclick="setGalleryImage(0)" class="gallery-dot w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500"></span>
+                <span onclick="setGalleryImage(1)" class="gallery-dot w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
+                <span onclick="setGalleryImage(2)" class="gallery-dot w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
+                <span onclick="setGalleryImage(3)" class="gallery-dot w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN AMENIDADES -->
+    <section id="beneficios" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-bronze-500 font-bold text-sm uppercase tracking-wider block mb-2">Comodidad y Valor</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-500 mb-4">La Urbanización ideal para tu familia</h2>
+                <p class="text-base sm:text-lg text-slate-600">Disfruta de espacios campestres bien planificados para garantizar la revalorización de tu inversión familiar.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <div class="w-14 h-14 rounded-2xl bg-forest-100 flex items-center justify-center text-forest-500 text-2xl mb-6">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-forest-900 mb-3">Red de Agua y Saneamiento</h3>
+                    <p class="text-slate-600 text-sm">Previciones técnicas pensadas para asegurar la instalación rápida de servicios públicos de agua y luz domiciliarios.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <div class="w-14 h-14 rounded-2xl bg-forest-100 flex items-center justify-center text-forest-500 text-2xl mb-6">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-forest-900 mb-3">Áreas Ecológicas</h3>
+                    <p class="text-slate-600 text-sm">Espacios campestres comunes de esparcimiento destinados a preservar el verdor de la hermosa geografía del valle.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <div class="w-14 h-14 rounded-2xl bg-forest-100 flex items-center justify-center text-forest-500 text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-forest-900 mb-3">Seguridad y Delimitación</h3>
+                    <p class="text-slate-600 text-sm">Hitos y delimitaciones de veredas que respetan la simetría y simulan un pórtico de ingreso ordenado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE REDES SOCIALES (CONEXIÓN DIRECTA) -->
+    <section id="redes" class="py-20 bg-bronze-100/50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-bronze-500 font-bold text-sm uppercase tracking-wider block mb-2">Comunidad Digital</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-500 mb-4">Síguenos y descubre tu nuevo lote</h2>
+            <p class="text-base sm:text-lg text-slate-600 mb-12 max-w-2xl mx-auto">Conoce los avances de nuestras obras en tiempo real, testimonios de propietarios y promociones exclusivas en nuestras redes sociales oficiales.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- TikTok Card -->
+                <a href="https://www.tiktok.com/@mayli.asesora.inmobiliar" target="_blank" class="flex flex-col items-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 hover:border-rose-500 transition-all group duration-300">
+                    <div class="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">Sigue las obras</h3>
+                    <p class="text-sm text-slate-500 mb-4 text-center">Mira los avances de la urbanización paso a paso en formato de video corto.</p>
+                    <span class="text-sm font-bold text-black flex items-center gap-2">Ver TikTok <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                </a>
+
+                <!-- Facebook Card -->
+                <a href="https://www.facebook.com/profile.php?id=61590743168605&notif_id=1781662965098366&notif_t=follow_profile&ref=notif" target="_blank" class="flex flex-col items-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 hover:border-blue-600 transition-all group duration-300">
+                    <div class="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">Nuestra Comunidad</h3>
+                    <p class="text-sm text-slate-500 mb-4 text-center">Entérate de promociones, eventos, lanzamientos y reseñas de clientes.</p>
+                    <span class="text-sm font-bold text-blue-600 flex items-center gap-2">Ver Facebook <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                </a>
+
+                <!-- WhatsApp Card -->
+                <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20deseo%20comunicarme%20con%20un%20asesor%20de%20ventas%20por%20favor." target="_blank" class="flex flex-col items-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 hover:border-emerald-500 transition-all group duration-300">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">Atención Inmediata</h3>
+                    <p class="text-sm text-slate-500 mb-4 text-center">Chatea directamente con uno de nuestros asesores andinos y resuelve tus dudas ahora.</p>
+                    <span class="text-sm font-bold text-emerald-600 flex items-center gap-2">Contactar <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-900 text-slate-400 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <!-- Logo marca en el Footer -->
+                    <div class="flex flex-col select-none mb-4">
+                        <span class="text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-bold text-white/80 leading-none mb-1">Inmobiliaria</span>
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-bronze-500 leading-none">
+                            VALLE DEL <span class="text-white font-light">MANTARO</span>
+                        </span>
+                    </div>
+                    <p class="text-sm leading-relaxed">Ofreciendo los mejores lotes de inversión en Huancayo y Junín con alta plusvalía para que construyas tus sueños familiares de manera segura al contado.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 font-sans">Navegación</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a></li>
+                        <li><a href="#masterplan" class="hover:text-white transition-colors">Mapa de Lotes</a></li>
+                        <li><a href="#beneficios" class="hover:text-white transition-colors">Beneficios</a></li>
+                        <li><a href="#redes" class="hover:text-white transition-colors">Redes Sociales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 font-sans">Contacto Directo</h4>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-phone mr-2 text-bronze-500"></i>+51 991 715 119</p>
+                    <p class="text-sm"><i class="fa-solid fa-envelope mr-2 text-bronze-500"></i>ventas@valledelmantarolotes.com</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 font-sans">Síguenos Oficiales</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61590743168605&notif_id=1781662965098366&notif_t=follow_profile&ref=notif" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@mayli.asesora.inmobiliar" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-rose-500 hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://wa.me/51991715119" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>© 2026 Inversiones Inmobiliaria Valle del Mantaro S.A.C. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-white">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVIDAD Y LÓGICA DE DATOS -->
+    <script>
+        // Base de Datos Estructurada de Proyectos y Lotes Reales en Soles
+        const proyectos = [
+            {
+                nombre: "VALLE SICAYA I",
+                tag: "CONDOMINIO CAMPESTRE",
+                desc: "Nuestra primera etapa completamente consolidada. Cuenta con vías afirmadas listas, delimitación física y alta velocidad de autoconstrucción. Ideal para inversores que buscan seguridad y consolidación inmediata en Huancayo.",
+                feat1: "Etapa habilitada - 90% vendida",
+                feat2: "Vías de acceso directo afirmadas y veredas delimitadas",
+                imagen: "image_90f868.jpg",
+                precioBase: "S/ 8,800",
+                galeria: [
+                    "image_galeria_sicaya_1_1.jpg",
+                    "image_galeria_sicaya_1_2.jpg",
+                    "image_galeria_sicaya_1_3.jpg",
+                    "image_galeria_sicaya_1_4.jpg"
+                ],
+                lotes: [
+                    { id: 101, manzana: 'A', numero: '01', area: 100, precio: 8800, estado: 'disponible' },
+                    { id: 102, manzana: 'A', numero: '02', area: 100, precio: 8800, estado: 'disponible' },
+                    { id: 103, manzana: 'A', numero: '03', area: 120, precio: 10560, estado: 'separado' },
+                    { id: 104, manzana: 'A', numero: '04', area: 100, precio: 8800, estado: 'disponible' },
+                    { id: 105, manzana: 'A', numero: '05', area: 140, precio: 12320, estado: 'vendido' },
+                    { id: 106, manzana: 'B', numero: '01', area: 100, precio: 8800, estado: 'disponible' },
+                    { id: 107, manzana: 'B', numero: '02', area: 100, precio: 8800, estado: 'disponible' },
+                    { id: 108, manzana: 'B', numero: '03', area: 120, precio: 10560, estado: 'disponible' },
+                    { id: 109, manzana: 'B', numero: '04', area: 100, precio: 8800, estado: 'disponible' },
+                    { id: 110, manzana: 'B', numero: '05', area: 100, precio: 8800, estado: 'disponible' },
+                ]
+            },
+            {
+                nombre: "VALLE SICAYA II",
+                tag: "PREVENTA EXCLUSIVA",
+                desc: "Segunda etapa ubicada estratégicamente con un clima andino espectacular y rodeada de abundante verdor. Excelente oportunidad de preventa con alta proyección de plusvalía a corto plazo.",
+                feat1: "Etapa de preventa - Precios especiales",
+                feat2: "Excelente topografía plana y vistas panorámicas espectaculares",
+                imagen: "image_9da7c5.jpg",
+                precioBase: "S/ 9,800",
+                galeria: [
+                    "image_galeria_sicaya_2_1.jpg",
+                    "image_galeria_sicaya_2_2.jpg",
+                    "image_galeria_sicaya_2_3.jpg",
+                    "image_galeria_sicaya_2_4.jpg"
+                ],
+                lotes: [
+                    { id: 111, manzana: 'C', numero: '01', area: 100, precio: 9800, estado: 'disponible' },
+                    { id: 112, manzana: 'C', numero: '02', area: 100, precio: 9800, estado: 'disponible' },
+                    { id: 113, manzana: 'C', numero: '03', area: 120, precio: 11760, estado: 'disponible' },
+                    { id: 114, manzana: 'C', numero: '04', area: 100, precio: 9800, estado: 'separado' },
+                    { id: 115, manzana: 'C', numero: '05', area: 140, precio: 13720, estado: 'vendido' },
+                    { id: 116, manzana: 'D', numero: '01', area: 100, precio: 9800, estado: 'disponible' },
+                    { id: 117, manzana: 'D', numero: '02', area: 100, precio: 9800, estado: 'disponible' },
+                    { id: 118, manzana: 'D', numero: '03', area: 120, precio: 11760, estado: 'disponible' },
+                    { id: 119, manzana: 'D', numero: '04', area: 100, precio: 9800, estado: 'disponible' },
+                    { id: 120, manzana: 'D', numero: '05', area: 100, precio: 9800, estado: 'disponible' },
+                ]
+            },
+            {
+                nombre: "VALLE SICAYA III",
+                tag: "PRÓXIMO LANZAMIENTO",
+                desc: "La etapa más exclusiva del proyecto Valle Sicaya, ideal para construir una magnífica casa de campo con espacio para biohuertos familiares, amplios jardines y tranquilidad absoluta.",
+                feat1: "Lanzamiento Exclusivo - Precios de apertura",
+                feat2: "Suelos fértiles óptimos para áreas verdes y huerto propio",
+                imagen: "image_9e8468.jpg",
+                precioBase: "S/ 10,800",
+                galeria: [
+                    "image_galeria_sicaya_3_1.jpg",
+                    "image_galeria_sicaya_3_2.jpg",
+                    "image_galeria_sicaya_3_3.jpg",
+                    "image_galeria_sicaya_3_4.jpg"
+                ],
+                lotes: [
+                    { id: 121, manzana: 'E', numero: '01', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 122, manzana: 'E', numero: '02', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 123, manzana: 'E', numero: '03', area: 120, precio: 12960, estado: 'disponible' },
+                    { id: 124, manzana: 'E', numero: '04', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 125, manzana: 'E', numero: '05', area: 140, precio: 15120, estado: 'separado' },
+                    { id: 126, manzana: 'E', numero: '06', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 127, manzana: 'F', numero: '01', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 128, manzana: 'F', numero: '02', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 129, manzana: 'F', numero: '03', area: 120, precio: 12960, estado: 'disponible' },
+                    { id: 130, manzana: 'F', numero: '04', area: 100, precio: 10800, estado: 'disponible' },
+                ]
+            }
+        ];
+
+        let activeProjectIndex = 0;
+        let activeGalleryIndex = 0;
+        let currentFilter = 'todos';
+        let loteSeleccionado = null;
+
+        // FUNCIONES DE CONTROL DE MODAL (ANUNCIO DE PREVENTA)
+        function showModal() {
+            const modal = document.getElementById('welcome-modal');
+            const card = document.getElementById('modal-card');
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            
+            card.classList.remove('scale-95');
+            card.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('welcome-modal');
+            const card = document.getElementById('modal-card');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+        }
+
+        // CONTROL DEL CARRUSEL DE PROYECTOS (ESTILO UNCP CORREGIDO DE RAÍZ)
+        function updateProjectUI() {
+            const container = document.getElementById('slide-container');
+            const proj = proyectos[activeProjectIndex];
+
+            // Aplicar efecto de transición suave
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                // Modificar datos del HTML
+                document.getElementById('proj-title').innerText = proj.nombre;
+                document.getElementById('proj-tag').innerText = proj.tag;
+                document.getElementById('proj-desc').innerText = proj.desc;
+                document.getElementById('proj-feat1').innerText = proj.feat1;
+                document.getElementById('proj-feat2').innerText = proj.feat2;
+                document.getElementById('proj-img').src = proj.imagen;
+                document.getElementById('proj-price-badge').innerText = "Desde " + proj.precioBase;
+                
+                // Modificar título en la sección de lotes inferior
+                document.getElementById('map-title-project').innerText = proj.nombre;
+
+                // Modificar puntos indicadores del carrusel
+                const indicators = document.querySelectorAll('.nav-indicator');
+                indicators.forEach((ind, index) => {
+                    if (index === activeProjectIndex) {
+                        ind.className = "nav-indicator w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500";
+                    } else {
+                        ind.className = "nav-indicator w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200";
+                    }
+                });
+
+                // Cargar por defecto el primer lote disponible de la nueva etapa
+                loteSeleccionado = proj.lotes[0];
+                selectLote(loteSeleccionado);
+                renderMap(currentFilter);
+
+                // Resetear la galería al cambiar de proyecto
+                activeGalleryIndex = 0;
+                updateGalleryUI();
+
+                // Re-establecer opacidad para reaparecer
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 300);
+        }
+
+        function nextProject() {
+            activeProjectIndex = (activeProjectIndex === proyectos.length - 1) ? 0 : activeProjectIndex + 1;
+            updateProjectUI();
+        }
+
+        function prevProject() {
+            activeProjectIndex = (activeProjectIndex === 0) ? proyectos.length - 1 : activeProjectIndex - 1;
+            updateProjectUI();
+        }
+
+        function setProject(index) {
+            activeProjectIndex = index;
+            updateProjectUI();
+        }
+
+        // CONTROL DEL CARRUSEL DE FOTOS (GALERÍA DE AVANCES PANORÁMICA)
+        function updateGalleryUI() {
+            const imgEl = document.getElementById('gallery-img');
+            const dots = document.querySelectorAll('.gallery-dot');
+            const proj = proyectos[activeProjectIndex];
+
+            imgEl.style.opacity = '0.3';
+            
+            setTimeout(() => {
+                imgEl.src = proj.galeria[activeGalleryIndex];
+                
+                // Actualizar estilo visual de los puntos de la galería
+                dots.forEach((dot, index) => {
+                    if (index === activeGalleryIndex) {
+                        dot.className = "gallery-dot w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500";
+                    } else {
+                        dot.className = "gallery-dot w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200";
+                    }
+                });
+                
+                imgEl.style.opacity = '1';
+            }, 200);
+        }
+
+        function nextGalleryImage() {
+            const proj = proyectos[activeProjectIndex];
+            activeGalleryIndex = (activeGalleryIndex === proj.galeria.length - 1) ? 0 : activeGalleryIndex + 1;
+            updateGalleryUI();
+        }
+
+        function prevGalleryImage() {
+            const proj = proyectos[activeProjectIndex];
+            activeGalleryIndex = (activeGalleryIndex === 0) ? proj.galeria.length - 1 : activeGalleryIndex - 1;
+            updateGalleryUI();
+        }
+
+        function setGalleryImage(index) {
+            activeGalleryIndex = index;
+            updateGalleryUI();
+        }
+
+        // RENDERIZADOR DEL PLANO DE LOTES EN TIEMPO REAL
+        function renderMap(filter = 'todos') {
+            const grid = document.getElementById('mapa-grid');
+            grid.innerHTML = '';
+
+            const proj = proyectos[activeProjectIndex];
+
+            proj.lotes.forEach(lote => {
+                if (filter !== 'todos' && lote.estado !== filter) return;
+
+                // Color según estado
+                let bgClass = 'bg-emerald-500 text-white hover:bg-emerald-600';
+                if (lote.estado === 'separado') bgClass = 'bg-amber-500 text-white hover:bg-amber-600';
+                if (lote.estado === 'vendido') bgClass = 'bg-rose-500 text-white cursor-not-allowed opacity-60';
+
+                // Añadir anillo extra si está seleccionado
+                const ringClass = (loteSeleccionado && loteSeleccionado.id === lote.id) ? 'ring-4 ring-offset-2 ring-bronze-500 scale-105 z-10' : '';
+
+                const btn = document.createElement('button');
+                btn.className = `p-3 rounded-lg font-bold text-sm shadow transition-all transform hover:scale-110 ${bgClass} ${ringClass} flex flex-col items-center justify-center aspect-square`;
+                btn.innerHTML = `<span class="text-[10px] text-white/80 font-normal">Mza ${lote.manzana}</span><span class="text-base">${lote.numero}</span>`;
+                
+                btn.onclick = () => {
+                    if (lote.estado === 'vendido') {
+                        return; // Evita seleccionar lotes ya vendidos
+                    }
+                    selectLote(lote);
+                };
+
+                grid.appendChild(btn);
+            });
+        }
+
+        // SELECCIONAR UN LOTE DE FORMA INTERACTIVA
+        function selectLote(lote) {
+            loteSeleccionado = lote;
+            
+            const descuento = 2000;
+            const precioFinal = Math.max(0, lote.precio - descuento);
+
+            // Actualizar panel lateral de detalles de compra al contado
+            document.getElementById('lote-num').innerText = lote.numero;
+            document.getElementById('lote-mza').innerText = lote.manzana;
+            document.getElementById('lote-area').innerText = lote.area;
+            document.getElementById('lote-precio').innerText = lote.precio.toLocaleString('es-PE');
+            document.getElementById('lote-descuento').innerText = descuento.toLocaleString('es-PE');
+            document.getElementById('lote-precio-final').innerText = precioFinal.toLocaleString('es-PE');
+
+            const badge = document.getElementById('lote-status-badge');
+            if (lote.estado === 'disponible') {
+                badge.innerText = 'Disponible';
+                badge.className = 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider';
+            } else {
+                badge.innerText = 'Separado';
+                badge.className = 'bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider';
+            }
+
+            // Enlace de WhatsApp con número oficial Mayli: 991715119
+            const btnWsp = document.getElementById('lote-whatsapp-btn');
+            const wspMsg = encodeURIComponent(`Hola Mayli, deseo recibir información de compra al contado para el Lote ${lote.numero} de la Manzana ${lote.manzana} en ${proyectos[activeProjectIndex].nombre}. Dimensiones: ${lote.area} m2. Precio de lista: S/ ${lote.precio.toLocaleString('es-PE')} - Descuento: S/ 2,000. ¡Precio Final Promocional: S/ ${precioFinal.toLocaleString('es-PE')}! ¿Sigue disponible para agendar visita?`);
+            btnWsp.href = `https://wa.me/51991715119?text=${wspMsg}`;
+
+            // Re-renderizar mapa para reflejar el borde de selección activo
+            renderMap(currentFilter);
+        }
+
+        // FILTRADO DINÁMICO DE LOTES (SOPORTE PARA BOTONES ADAPTADO)
+        function filterLots(filter) {
+            currentFilter = filter;
+            
+            // Reestablecer estilos de botones de filtro
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.className = "filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all";
+            });
+
+            // Dar estilo de botón activo al botón pulsado
+            const activeBtn = event.currentTarget || event.target;
+            if (activeBtn && activeBtn.classList) {
+                activeBtn.className = "filter-btn active bg-forest-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition-all";
+            }
+
+            renderMap(filter);
+        }
+
+        // Inicialización al cargar la ventana
+        window.onload = () => {
+            updateProjectUI();
+            updateGalleryUI();
+            
+            // Retardo de 1 segundo para mostrar el pop-up de forma elegante
+            setTimeout(showModal, 1000);
+        };
+    </script>
+</body>
+</html>
