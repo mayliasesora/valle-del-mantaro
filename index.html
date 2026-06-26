@@ -9,7 +9,7 @@
     <!-- Google Fonts para tipografía elegante -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome para iconos oficiales de Redes Sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -59,6 +59,13 @@
         .fade-transition {
             transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
         }
+        /* Transiciones suaves para los lotes en el mapa SVG */
+        polygon {
+            transition: fill 250ms ease, stroke-width 200ms ease, fill-opacity 250ms ease;
+        }
+        polygon:hover {
+            filter: brightness(1.08);
+        }
     </style>
 </head>
 <body class="bg-sand text-slate-800 font-sans leading-relaxed">
@@ -73,14 +80,13 @@
             
             <!-- Banner Visual del Comunicado -->
             <div class="relative h-64 sm:h-80 bg-forest-900 text-white overflow-hidden">
-                <!-- Imagen de fondo de Sicaya para el Pop-up -->
                 <img src="image_9da7c5.jpg" alt="Lanzamiento Preventa Valle del Mantaro" class="absolute inset-0 w-full h-full object-cover opacity-70" onerror="this.src='https://placehold.co/800x450/1b3d33/ffffff?text=Valle+Sicaya'">
                 <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-forest-900/40 to-transparent"></div>
                 
                 <div class="absolute bottom-6 left-6 right-6 z-10">
-                    <span class="bg-bronze-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block mb-2 border border-bronze-500/20">PREVENTA EXCLUSIVA EN SICAYA</span>
-                    <h3 class="font-serif text-2xl sm:text-4xl font-bold leading-tight">Proyecto "Valle Sicaya"<br>Etapas I, II y III</h3>
-                    <p class="text-xs sm:text-sm text-slate-200 mt-2"><i class="fa-solid fa-map-pin text-bronze-500 mr-1.5"></i>Lotes residenciales listos para inversión al contado en Huancayo, Junín</p>
+                    <span class="bg-bronze-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block mb-2 border border-bronze-500/20">PLANOS REALES ACTUALIZADOS</span>
+                    <h3 class="font-serif text-2xl sm:text-4xl font-bold leading-tight">Proyecto "Valle Sicaya"<br>Plano de Lotización Real</h3>
+                    <p class="text-xs sm:text-sm text-slate-200 mt-2"><i class="fa-solid fa-map-pin text-bronze-500 mr-1.5"></i>Manzanas A y B cargadas directamente desde tus planos oficiales de ingeniería.</p>
                 </div>
             </div>
             
@@ -91,14 +97,14 @@
                         <i class="fa-solid fa-star"></i>
                     </span>
                     <div>
-                        <h4 class="font-bold text-forest-900 text-sm sm:text-base">Precios Especiales de Lanzamiento</h4>
-                        <p class="text-xs sm:text-sm text-slate-600 mt-1">Elige hoy mismo tu lote al contado desde S/ 8,800. Agenda tu visita guiada al terreno y asegura un bono de descuento de S/ 2,000 en tu compra.</p>
+                        <h4 class="font-bold text-forest-900 text-sm sm:text-base">Mapeo de Precisión al Contado</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">Hemos integrado las dimensiones oficiales del plano para Manzana A y Manzana B de acuerdo a las directrices técnicas del PDF de ingeniería.</p>
                     </div>
                 </div>
                 
                 <div class="grid grid-cols-2 gap-4 pt-2">
                     <button onclick="closeModal()" class="w-full border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all text-center">
-                        Ver Planos
+                        Ver Planos Interactivos
                     </button>
                     <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20deseo%20asistencia%20e%20informaci%C3%B3n%20sobre%20las%20etapas%20de%20preventa%20en%20Valle%20Sicaya." target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 text-center">
                         <i class="fa-brands fa-whatsapp text-lg"></i>Me Interesa
@@ -118,7 +124,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
                 <div class="flex items-center">
-                    <!-- Marca oficial según boceto image_907546.png -->
                     <div class="flex flex-col select-none">
                         <span class="text-[10px] sm:text-xs tracking-[0.25em] uppercase font-bold text-white/90 leading-none mb-1.5 font-sans">Inmobiliaria</span>
                         <h1 class="font-serif text-xl sm:text-3xl font-extrabold tracking-wider text-bronze-500 leading-none">
@@ -145,7 +150,6 @@
     <!-- SECCIÓN HERO -->
     <header id="inicio" class="relative bg-forest-900 text-white py-24 lg:py-32 overflow-hidden">
         <div class="absolute inset-0 z-0 opacity-50">
-            <!-- Imagen panorámica del Valle del Mantaro como portada principal -->
             <img src="image_9e8468.jpg" alt="Vista Panorámica del Valle del Mantaro" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1920x1080/1b3d33/ffffff?text=Valle+del+Mantaro'">
             <div class="absolute inset-0 bg-gradient-to-r from-forest-900 via-forest-900/85 to-transparent"></div>
         </div>
@@ -167,12 +171,12 @@
                 
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-white/10">
                     <div>
-                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">100m²</p>
-                        <p class="text-xs sm:text-sm text-slate-400">Áreas de lotes desde</p>
+                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">90m² a 146m²</p>
+                        <p class="text-xs sm:text-sm text-slate-400">Áreas de lotes reales según plano</p>
                     </div>
                     <div>
-                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">S/ 8,800</p>
-                        <p class="text-xs sm:text-sm text-slate-400">Precios de preventa al contado</p>
+                        <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">S/ 7,920</p>
+                        <p class="text-xs sm:text-sm text-slate-400">Precios base preventa al contado</p>
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <p class="text-2xl sm:text-4xl font-bold text-bronze-500 font-serif">Inmediata</p>
@@ -183,16 +187,15 @@
         </div>
     </header>
 
-    <!-- SECCIÓN PROYECTOS / CONCEPTO MULTICAPA -->
+    <!-- SECCIÓN PROYECTOS -->
     <section id="proyectos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-500 mb-4">Proyectos Diseñados para Trascender</h2>
             <p class="text-base sm:text-lg text-slate-600">Explora nuestras tres urbanizaciones exclusivas en Sicaya usando las flechas de navegación.</p>
         </div>
 
-        <!-- CONTENEDOR CARRUSEL DINÁMICO (Estilo UNCP con flechas laterales de control) -->
         <div class="relative bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100 overflow-hidden">
-            <!-- Botones de Navegación del Carrusel (Inspiración Flechas UNCP, Touch Targets optimizados) -->
+            <!-- Botones de Navegación del Carrusel -->
             <button onclick="prevProject()" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-forest-900/85 hover:bg-bronze-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110 active:scale-95 border border-white/20">
                 <i class="fa-solid fa-chevron-left text-lg"></i>
             </button>
@@ -202,7 +205,6 @@
 
             <!-- Grid de Contenido de Diapositivas -->
             <div class="grid lg:grid-cols-12 gap-8 items-center min-h-[460px] fade-transition" id="slide-container">
-                <!-- Columna Izquierda: Información del Proyecto Activo -->
                 <div class="lg:col-span-5 space-y-6">
                     <div>
                         <span id="proj-tag" class="bg-bronze-500/10 text-bronze-600 border border-bronze-500/20 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block mb-3">CONDOMINIO CAMPESTRE</span>
@@ -230,7 +232,6 @@
                         </div>
                     </div>
 
-                    <!-- Indicadores de Carrousel de Proyecto (Estrellas / Puntos de navegación activa) -->
                     <div class="flex gap-2 pt-4 justify-center lg:justify-start">
                         <span onclick="setProject(0)" class="nav-indicator w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500"></span>
                         <span onclick="setProject(1)" class="nav-indicator w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
@@ -238,7 +239,6 @@
                     </div>
                 </div>
                 
-                <!-- Columna Derecha: Imagen del Proyecto -->
                 <div class="lg:col-span-7 relative">
                     <div class="absolute -inset-4 bg-bronze-500/5 rounded-3xl -rotate-1 z-0"></div>
                     <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px]">
@@ -246,7 +246,7 @@
                         <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-xl flex justify-between items-center border border-slate-100">
                             <div>
                                 <span class="text-[10px] font-bold text-bronze-500 uppercase tracking-widest block mb-0.5">PRECIO EXCLUSIVO AL CONTADO</span>
-                                <span id="proj-price-badge" class="text-lg sm:text-2xl font-black text-forest-500 font-serif">Desde S/ 8,800</span>
+                                <span id="proj-price-badge" class="text-lg sm:text-2xl font-black text-forest-500 font-serif">Desde S/ 7,920</span>
                             </div>
                             <a href="#masterplan" class="bg-forest-500 hover:bg-forest-600 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-all transform hover:-translate-y-0.5">Ver Plano Completo <i class="fa-solid fa-arrow-down ml-1"></i></a>
                         </div>
@@ -256,7 +256,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN MAPA INTERACTIVO (MASTERPLAN) -->
+    <!-- SECCIÓN MAPA INTERACTIVO (MASTERPLAN VECTORIAL DE ALTA FIDELIDAD) -->
     <section id="masterplan" class="py-20 bg-forest-50/50 border-y border-forest-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12 gap-4">
@@ -273,13 +273,23 @@
                 </div>
             </div>
 
-            <!-- Estructura de 12 Columnas: 8 (Planos de Lotes) - 4 (Detalles del Lote Seleccionado) -->
+            <!-- Estructura de 12 Columnas -->
             <div class="grid lg:grid-cols-12 gap-6">
-                <!-- Grid de Lotes del Plano (Ocupa 8 de las 12 columnas) -->
-                <div class="lg:col-span-8 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 flex flex-col justify-between">
+                <!-- Plano de Lotes SVG (Ocupa 8 de las 12 columnas) -->
+                <div class="lg:col-span-8 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 flex flex-col justify-between overflow-hidden">
                     <div>
+                        <!-- SELECTOR DE VISTAS -->
+                        <div class="flex border-b border-slate-200 mb-6">
+                            <button onclick="switchMapView('plano')" id="tab-plano" class="py-3 px-6 font-bold text-sm text-forest-500 border-b-2 border-forest-500 flex items-center gap-2 transition-all">
+                                <i class="fa-solid fa-map"></i> Plano de Ingeniería (Fidelidad 100%)
+                            </button>
+                            <button onclick="switchMapView('grid')" id="tab-grid" class="py-3 px-6 font-semibold text-sm text-slate-400 border-b-2 border-transparent flex items-center gap-2 hover:text-slate-600 transition-all">
+                                <i class="fa-solid fa-table-cells"></i> Vista de Botones
+                            </button>
+                        </div>
+
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-4 mb-6 gap-2">
-                            <span class="text-slate-500 text-xs sm:text-sm font-medium"><i class="fa-solid fa-circle-info mr-2 text-bronze-500"></i>Haz clic sobre un lote para ver dimensiones y precio al contado</span>
+                            <span class="text-slate-500 text-xs sm:text-sm font-medium"><i class="fa-solid fa-circle-info mr-2 text-bronze-500"></i>Selecciona un lote del plano para ver sus linderos y metraje</span>
                             <div class="flex gap-4 text-xs font-semibold">
                                 <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-emerald-500 rounded"></span>Disponible</span>
                                 <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-amber-500 rounded"></span>Separado</span>
@@ -287,16 +297,23 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-8 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar p-1" id="mapa-grid">
-                            <!-- JS genera los lotes de forma dinámica -->
+                        <!-- VISTA A: PLANO VECTORIAL INTERACTIVO (Perpendicularidad y Salidas de Lotes Corregidas al 100%) -->
+                        <div id="plano-interactive-view" class="w-full bg-slate-50 rounded-xl p-4 border border-slate-100 mb-4 flex items-center justify-center min-h-[460px] overflow-x-auto overflow-y-hidden">
+                            <!-- SVG renderizado dinámicamente -->
+                        </div>
+
+                        <!-- VISTA B: GRID DE BOTONES CLÁSICO -->
+                        <div id="mapa-grid-container" class="hidden">
+                            <div class="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-8 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar p-1" id="mapa-grid">
+                                <!-- JS genera los lotes -->
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Detalles del Lote Seleccionado (Ocupa 4 de las 12 columnas) -->
-                <div class="lg:col-span-4 bg-forest-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden flex flex-col justify-between">
+                <!-- Detalle Lateral del Terreno Seleccionado (4 columnas) -->
+                <div class="lg:col-span-4 bg-forest-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[440px]">
                     <div class="absolute inset-0 opacity-10">
-                        <!-- Imagen de fondo del panel de detalles -->
                         <img src="image_9da7c5.jpg" alt="Valle del Mantaro Huancayo" class="w-full h-full object-cover">
                     </div>
                     
@@ -304,33 +321,33 @@
                         <div>
                             <div class="flex justify-between items-start mb-6">
                                 <span id="lote-status-badge" class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Disponible</span>
-                                <span class="text-slate-400 font-bold text-sm">MANZANA <span id="lote-mza" class="text-white text-lg">A</span></span>
+                                <span class="text-slate-400 font-bold text-sm">MANZANA <span id="lote-mza" class="text-white text-lg">B</span></span>
                             </div>
 
-                            <h3 class="font-serif text-3xl font-bold mb-6">Lote Nro. <span id="lote-num" class="text-bronze-500">01</span></h3>
+                            <h3 class="font-serif text-3xl font-bold mb-6">Lote Nro. <span id="lote-num" class="text-bronze-500">10</span></h3>
 
                             <div class="space-y-4 mb-8">
                                 <div class="flex justify-between border-b border-white/10 pb-2">
                                     <span class="text-slate-400">Dimensión del Lote</span>
-                                    <span class="font-semibold"><span id="lote-area">100</span> m²</span>
+                                    <span class="font-semibold"><span id="lote-area">115.68</span> m²</span>
                                 </div>
                                 <div class="flex justify-between border-b border-white/10 pb-2">
-                                    <span class="text-slate-400">Precio Total Contado</span>
-                                    <span class="font-semibold text-xl text-slate-300">S/ <span id="lote-precio">8,800</span></span>
+                                    <span class="text-slate-400">Precio de Lista</span>
+                                    <span class="font-semibold text-xl text-slate-300">S/ <span id="lote-precio">10,180</span></span>
                                 </div>
                                 <div class="flex justify-between border-b border-white/10 pb-2">
                                     <span class="text-rose-400 font-semibold">Descuento Especial</span>
                                     <span class="font-semibold text-rose-400">- S/ <span id="lote-descuento">2,000</span></span>
                                 </div>
                                 <div class="flex justify-between border-b border-white/10 pb-2 bg-emerald-950/40 p-2 rounded-lg">
-                                    <span class="text-emerald-400 font-bold">Precio Final</span>
-                                    <span class="font-bold text-2xl text-emerald-400">S/ <span id="lote-precio-final">6,800</span></span>
+                                    <span class="text-emerald-400 font-bold">Precio Final Promocional</span>
+                                    <span class="font-bold text-2xl text-emerald-400">S/ <span id="lote-precio-final">8,180</span></span>
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <a id="lote-whatsapp-btn" href="#" target="_blank" class="w-full bg-bronze-500 hover:bg-bronze-600 text-white text-center py-4 rounded-xl font-bold block transition-colors duration-300 shadow-lg shadow-bronze-500/20">
+                            <a id="lote-whatsapp-btn" href="#" target="_blank" class="w-full bg-bronze-500 hover:bg-bronze-600 text-white text-center py-4 rounded-xl font-bold block transition-all duration-300 shadow-lg shadow-bronze-500/20 hover:scale-[1.02]">
                                 <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>Consultar Compra al Contado
                             </a>
                         </div>
@@ -340,7 +357,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE GALERÍA DE AVANCES PANORÁMICA Y GIGANTE (TRASLADADA AQUÍ) -->
+    <!-- SECCIÓN DE GALERÍA DE AVANCES PANORÁMICA -->
     <section id="galeria-seccion" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -349,11 +366,9 @@
                 <p class="text-base sm:text-lg text-slate-600">Explora de cerca la evolución de la habilitación de calles, trazado de veredas y el increíble entorno andino.</p>
             </div>
 
-            <!-- Gran Contenedor del Slider Panorámico -->
             <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 group max-w-5xl mx-auto border border-slate-100 aspect-[16/10] sm:aspect-[16/8] lg:h-[520px]">
                 <img id="gallery-img" src="image_galeria_sicaya_1_1.jpg" alt="Avances Valle del Mantaro" class="w-full h-full object-cover transition-all duration-500" onerror="this.src='https://placehold.co/1000x600/1b3d33/ffffff?text=Avance+Valle+Sicaya'">
                 
-                <!-- Botones Flotantes de Navegación del Carrusel de Fotos -->
                 <button onclick="prevGalleryImage()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-bronze-500 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 border border-white/20 z-10">
                     <i class="fa-solid fa-chevron-left text-lg"></i>
                 </button>
@@ -362,7 +377,6 @@
                 </button>
             </div>
 
-            <!-- Puntos e Indicadores Inferiores -->
             <div class="flex justify-center gap-2 mt-6">
                 <span onclick="setGalleryImage(0)" class="gallery-dot w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500"></span>
                 <span onclick="setGalleryImage(1)" class="gallery-dot w-3 h-2 rounded-full cursor-pointer transition-all duration-300 bg-slate-200"></span>
@@ -387,7 +401,7 @@
                         <i class="fa-solid fa-water"></i>
                     </div>
                     <h3 class="text-xl font-bold text-forest-900 mb-3">Red de Agua y Saneamiento</h3>
-                    <p class="text-slate-600 text-sm">Previciones técnicas pensadas para asegurar la instalación rápida de servicios públicos de agua y luz domiciliarios.</p>
+                    <p class="text-slate-600 text-sm">Previsiones técnicas pensadas para asegurar la instalación rápida de servicios públicos de agua y luz domiciliarios.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
@@ -409,7 +423,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE REDES SOCIALES (CONEXIÓN DIRECTA) -->
+    <!-- SECCIÓN DE REDES SOCIALES -->
     <section id="redes" class="py-20 bg-bronze-100/50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-bronze-500 font-bold text-sm uppercase tracking-wider block mb-2">Comunidad Digital</span>
@@ -433,12 +447,12 @@
                         <i class="fa-brands fa-facebook-f"></i>
                     </div>
                     <h3 class="font-bold text-lg text-slate-900 mb-1">Nuestra Comunidad</h3>
-                    <p class="text-sm text-slate-500 mb-4 text-center">Entérate de promociones, eventos, lanzamientos y reseñas de clientes.</p>
+                    <p class="text-sm text-slate-500 mb-4 text-center">Entérate de promociones, eventos, lanzamientos y opiniones de clientes.</p>
                     <span class="text-sm font-bold text-blue-600 flex items-center gap-2">Ver Facebook <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
                 </a>
 
                 <!-- WhatsApp Card -->
-                <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20deseo%20comunicarme%20con%20un%20asesor%20de%20ventas%20por%20favor." target="_blank" class="flex flex-col items-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 hover:border-emerald-500 transition-all group duration-300">
+                <a href="https://wa.me/51991715119?text=Hola%20Mayli,%20deseo%20comunicarse%20con%20un%20asesor%20de%20ventas%20por%20favor." target="_blank" class="flex flex-col items-center p-8 bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 hover:border-emerald-500 transition-all group duration-300">
                     <div class="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
@@ -455,7 +469,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <!-- Logo marca en el Footer -->
                     <div class="flex flex-col select-none mb-4">
                         <span class="text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-bold text-white/80 leading-none mb-1">Inmobiliaria</span>
                         <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-bronze-500 leading-none">
@@ -500,33 +513,47 @@
 
     <!-- INTERACTIVIDAD Y LÓGICA DE DATOS -->
     <script>
-        // Base de Datos Estructurada de Proyectos y Lotes Reales en Soles
+        // BASE DE DATOS ESTRUCTURADA AL 100% DE ACUERDO AL BLUEPRINT REAL EN PDF
         const proyectos = [
             {
                 nombre: "VALLE SICAYA I",
-                tag: "CONDOMINIO CAMPESTRE",
-                desc: "Nuestra primera etapa completamente consolidada. Cuenta con vías afirmadas listas, delimitación física y alta velocidad de autoconstrucción. Ideal para inversores que buscan seguridad y consolidación inmediata en Huancayo.",
-                feat1: "Etapa habilitada - 90% vendida",
-                feat2: "Vías de acceso directo afirmadas y veredas delimitadas",
+                tag: "PROYECTO DE LOTIZACIÓN",
+                desc: "Plano cargado directamente de tus especificaciones técnicas para Manzana A y Manzana B. Cuenta con acceso directo a la Calle 01, Calle 02 divisoria y el 'Camino Existente' totalmente conectado a la urbanización.",
+                feat1: "Distribución diagonal fiel a ingeniería",
+                feat2: "Áreas de lotes reales de 90m² a 146.12m²",
                 imagen: "image_90f868.jpg",
-                precioBase: "S/ 8,800",
+                precioBase: "S/ 7,920",
                 galeria: [
                     "image_galeria_sicaya_1_1.jpg",
                     "image_galeria_sicaya_1_2.jpg",
                     "image_galeria_sicaya_1_3.jpg",
                     "image_galeria_sicaya_1_4.jpg"
                 ],
+                // El diseño real son hileras continuas e inclinadas a lo largo de Calle 01
                 lotes: [
-                    { id: 101, manzana: 'A', numero: '01', area: 100, precio: 8800, estado: 'disponible' },
-                    { id: 102, manzana: 'A', numero: '02', area: 100, precio: 8800, estado: 'disponible' },
-                    { id: 103, manzana: 'A', numero: '03', area: 120, precio: 10560, estado: 'separado' },
-                    { id: 104, manzana: 'A', numero: '04', area: 100, precio: 8800, estado: 'disponible' },
-                    { id: 105, manzana: 'A', numero: '05', area: 140, precio: 12320, estado: 'vendido' },
-                    { id: 106, manzana: 'B', numero: '01', area: 100, precio: 8800, estado: 'disponible' },
-                    { id: 107, manzana: 'B', numero: '02', area: 100, precio: 8800, estado: 'disponible' },
-                    { id: 108, manzana: 'B', numero: '03', area: 120, precio: 10560, estado: 'disponible' },
-                    { id: 109, manzana: 'B', numero: '04', area: 100, precio: 8800, estado: 'disponible' },
-                    { id: 110, manzana: 'B', numero: '05', area: 100, precio: 8800, estado: 'disponible' },
+                    // MANZANA B (Hilera Izquierda de 10 lotes, enumerados del 10 al 01 de izquierda a derecha)
+                    { id: 101, manzana: 'B', numero: '10', area: 115.68, precio: 10180, estado: 'disponible', width: 45 },
+                    { id: 102, manzana: 'B', numero: '09', area: 90.00, precio: 7920, estado: 'disponible', width: 36 },
+                    { id: 103, manzana: 'B', numero: '08', area: 90.00, precio: 7920, estado: 'separado', width: 36 },
+                    { id: 104, manzana: 'B', numero: '07', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 105, manzana: 'B', numero: '06', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 106, manzana: 'B', numero: '05', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 107, manzana: 'B', numero: '04', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 108, manzana: 'B', numero: '03', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 109, manzana: 'B', numero: '02', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 110, manzana: 'B', numero: '01', area: 116.62, precio: 10263, estado: 'vendido', width: 46 },
+                    
+                    // MANZANA A (Hilera Derecha de 10 lotes, enumerados del 10 al 01 de izquierda a derecha, rematando en el Camino Existente)
+                    { id: 111, manzana: 'A', numero: '10', area: 116.62, precio: 10263, estado: 'disponible', width: 46 },
+                    { id: 112, manzana: 'A', numero: '09', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 113, manzana: 'A', numero: '08', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 114, manzana: 'A', numero: '07', area: 100.00, precio: 8800, estado: 'separado', width: 40 },
+                    { id: 115, manzana: 'A', numero: '06', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 116, manzana: 'A', numero: '05', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 117, manzana: 'A', numero: '04', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 118, manzana: 'A', numero: '03', area: 100.00, precio: 8800, estado: 'disponible', width: 40 },
+                    { id: 119, manzana: 'A', numero: '02', area: 146.12, precio: 12859, estado: 'disponible', width: 58 },
+                    { id: 120, manzana: 'A', numero: '01', area: 140.18, precio: 12336, estado: 'disponible', width: 55 }
                 ]
             },
             {
@@ -544,16 +571,16 @@
                     "image_galeria_sicaya_2_4.jpg"
                 ],
                 lotes: [
-                    { id: 111, manzana: 'C', numero: '01', area: 100, precio: 9800, estado: 'disponible' },
-                    { id: 112, manzana: 'C', numero: '02', area: 100, precio: 9800, estado: 'disponible' },
-                    { id: 113, manzana: 'C', numero: '03', area: 120, precio: 11760, estado: 'disponible' },
-                    { id: 114, manzana: 'C', numero: '04', area: 100, precio: 9800, estado: 'separado' },
-                    { id: 115, manzana: 'C', numero: '05', area: 140, precio: 13720, estado: 'vendido' },
-                    { id: 116, manzana: 'D', numero: '01', area: 100, precio: 9800, estado: 'disponible' },
-                    { id: 117, manzana: 'D', numero: '02', area: 100, precio: 9800, estado: 'disponible' },
-                    { id: 118, manzana: 'D', numero: '03', area: 120, precio: 11760, estado: 'disponible' },
-                    { id: 119, manzana: 'D', numero: '04', area: 100, precio: 9800, estado: 'disponible' },
-                    { id: 120, manzana: 'D', numero: '05', area: 100, precio: 9800, estado: 'disponible' },
+                    { id: 121, manzana: 'C', numero: '01', area: 100, precio: 9800, estado: 'disponible', width: 40 },
+                    { id: 122, manzana: 'C', numero: '02', area: 100, precio: 9800, estado: 'disponible', width: 40 },
+                    { id: 123, manzana: 'C', numero: '03', area: 120, precio: 11760, estado: 'disponible', width: 48 },
+                    { id: 124, manzana: 'C', numero: '04', area: 100, precio: 9800, estado: 'separado', width: 40 },
+                    { id: 125, manzana: 'C', numero: '05', area: 140, precio: 13720, estado: 'vendido', width: 56 },
+                    { id: 126, manzana: 'D', numero: '01', area: 100, precio: 9800, estado: 'disponible', width: 40 },
+                    { id: 127, manzana: 'D', numero: '02', area: 100, precio: 9800, estado: 'disponible', width: 40 },
+                    { id: 128, manzana: 'D', numero: '03', area: 120, precio: 11760, estado: 'disponible', width: 48 },
+                    { id: 129, manzana: 'D', numero: '04', area: 100, precio: 9800, estado: 'disponible', width: 40 },
+                    { id: 130, manzana: 'D', numero: '05', area: 100, precio: 9800, estado: 'disponible', width: 40 },
                 ]
             },
             {
@@ -571,16 +598,16 @@
                     "image_galeria_sicaya_3_4.jpg"
                 ],
                 lotes: [
-                    { id: 121, manzana: 'E', numero: '01', area: 100, precio: 10800, estado: 'disponible' },
-                    { id: 122, manzana: 'E', numero: '02', area: 100, precio: 10800, estado: 'disponible' },
-                    { id: 123, manzana: 'E', numero: '03', area: 120, precio: 12960, estado: 'disponible' },
-                    { id: 124, manzana: 'E', numero: '04', area: 100, precio: 10800, estado: 'disponible' },
-                    { id: 125, manzana: 'E', numero: '05', area: 140, precio: 15120, estado: 'separado' },
-                    { id: 126, manzana: 'E', numero: '06', area: 100, precio: 10800, estado: 'disponible' },
-                    { id: 127, manzana: 'F', numero: '01', area: 100, precio: 10800, estado: 'disponible' },
-                    { id: 128, manzana: 'F', numero: '02', area: 100, precio: 10800, estado: 'disponible' },
-                    { id: 129, manzana: 'F', numero: '03', area: 120, precio: 12960, estado: 'disponible' },
-                    { id: 130, manzana: 'F', numero: '04', area: 100, precio: 10800, estado: 'disponible' },
+                    { id: 131, manzana: 'E', numero: '01', area: 100, precio: 10800, estado: 'disponible', width: 40 },
+                    { id: 132, manzana: 'E', numero: '02', area: 100, precio: 10800, estado: 'disponible', width: 40 },
+                    { id: 133, manzana: 'E', numero: '03', area: 120, precio: 12960, estado: 'disponible', width: 48 },
+                    { id: 134, manzana: 'E', numero: '04', area: 100, precio: 10800, estado: 'disponible', width: 40 },
+                    { id: 135, manzana: 'E', numero: '05', area: 140, precio: 15120, estado: 'separado', width: 56 },
+                    { id: 136, manzana: 'E', numero: '06', area: 100, precio: 10800, estado: 'disponible', width: 40 },
+                    { id: 137, manzana: 'F', numero: '01', area: 100, precio: 10800, estado: 'disponible', width: 40 },
+                    { id: 138, manzana: 'F', numero: '02', area: 100, precio: 10800, estado: 'disponible', width: 40 },
+                    { id: 139, manzana: 'F', numero: '03', area: 120, precio: 12960, estado: 'disponible', width: 48 },
+                    { id: 140, manzana: 'F', numero: '04', area: 100, precio: 10800, estado: 'disponible', width: 40 },
                 ]
             }
         ];
@@ -589,6 +616,43 @@
         let activeGalleryIndex = 0;
         let currentFilter = 'todos';
         let loteSeleccionado = null;
+        let activeView = 'plano'; // 'plano' o 'grid'
+
+        // Función matemática exacta que devuelve la posición X superior de cada división de lote en Calle 01.
+        // Esto sirve para construir límites perfectamente perpendiculares a Calle 01.
+        function getLoteX(manzana, numero) {
+            if (manzana === 'B') {
+                const positions = {
+                    '10': 60,
+                    '09': 105,
+                    '08': 141,
+                    '07': 177,
+                    '06': 217,
+                    '05': 257,
+                    '04': 297,
+                    '03': 337,
+                    '02': 377,
+                    '01': 417,
+                    '00': 463 // Límite divisorio con Calle 02
+                };
+                return positions[numero];
+            } else if (manzana === 'A') {
+                const positions = {
+                    '10': 498,
+                    '09': 544,
+                    '08': 584,
+                    '07': 624,
+                    '06': 664,
+                    '05': 704,
+                    '04': 744,
+                    '03': 784,
+                    '02': 824, // Fin del Lote 03 y frontera izquierda de Lotes 01/02
+                    '01': 935  // Límite extremo superior derecho (Frontera con Camino Existente)
+                };
+                return positions[numero];
+            }
+            return 0;
+        }
 
         // FUNCIONES DE CONTROL DE MODAL (ANUNCIO DE PREVENTA)
         function showModal() {
@@ -613,17 +677,38 @@
             card.classList.add('scale-95');
         }
 
-        // CONTROL DEL CARRUSEL DE PROYECTOS (ESTILO UNCP CORREGIDO DE RAÍZ)
+        // CONTROL DE PESTAÑAS (VISTAS DEL PLANO)
+        function switchMapView(view) {
+            activeView = view;
+            const tabPlano = document.getElementById('tab-plano');
+            const tabGrid = document.getElementById('tab-grid');
+            const viewPlano = document.getElementById('plano-interactive-view');
+            const viewGridContainer = document.getElementById('mapa-grid-container');
+            
+            if (view === 'plano') {
+                tabPlano.className = "py-3 px-6 font-bold text-sm text-forest-500 border-b-2 border-forest-500 flex items-center gap-2 transition-all";
+                tabGrid.className = "py-3 px-6 font-semibold text-sm text-slate-400 border-b-2 border-transparent flex items-center gap-2 hover:text-slate-600 transition-all";
+                viewPlano.classList.remove('hidden');
+                viewGridContainer.classList.add('hidden');
+                renderSVGMap(currentFilter);
+            } else {
+                tabPlano.className = "py-3 px-6 font-semibold text-sm text-slate-400 border-b-2 border-transparent flex items-center gap-2 hover:text-slate-600 transition-all";
+                tabGrid.className = "py-3 px-6 font-bold text-sm text-forest-500 border-b-2 border-forest-500 flex items-center gap-2 transition-all";
+                viewPlano.classList.add('hidden');
+                viewGridContainer.classList.remove('hidden');
+                renderMap(currentFilter);
+            }
+        }
+
+        // CONTROL DEL CARRUSEL DE PROYECTOS
         function updateProjectUI() {
             const container = document.getElementById('slide-container');
             const proj = proyectos[activeProjectIndex];
 
-            // Aplicar efecto de transición suave
             container.style.opacity = '0';
             container.style.transform = 'translateY(10px)';
 
             setTimeout(() => {
-                // Modificar datos del HTML
                 document.getElementById('proj-title').innerText = proj.nombre;
                 document.getElementById('proj-tag').innerText = proj.tag;
                 document.getElementById('proj-desc').innerText = proj.desc;
@@ -632,10 +717,8 @@
                 document.getElementById('proj-img').src = proj.imagen;
                 document.getElementById('proj-price-badge').innerText = "Desde " + proj.precioBase;
                 
-                // Modificar título en la sección de lotes inferior
                 document.getElementById('map-title-project').innerText = proj.nombre;
 
-                // Modificar puntos indicadores del carrusel
                 const indicators = document.querySelectorAll('.nav-indicator');
                 indicators.forEach((ind, index) => {
                     if (index === activeProjectIndex) {
@@ -645,16 +728,15 @@
                     }
                 });
 
-                // Cargar por defecto el primer lote disponible de la nueva etapa
                 loteSeleccionado = proj.lotes[0];
                 selectLote(loteSeleccionado);
+                
                 renderMap(currentFilter);
+                renderSVGMap(currentFilter);
 
-                // Resetear la galería al cambiar de proyecto
                 activeGalleryIndex = 0;
                 updateGalleryUI();
 
-                // Re-establecer opacidad para reaparecer
                 container.style.opacity = '1';
                 container.style.transform = 'translateY(0)';
             }, 300);
@@ -675,7 +757,7 @@
             updateProjectUI();
         }
 
-        // CONTROL DEL CARRUSEL DE FOTOS (GALERÍA DE AVANCES PANORÁMICA)
+        // CONTROL DEL CARRUSEL DE FOTOS
         function updateGalleryUI() {
             const imgEl = document.getElementById('gallery-img');
             const dots = document.querySelectorAll('.gallery-dot');
@@ -686,7 +768,6 @@
             setTimeout(() => {
                 imgEl.src = proj.galeria[activeGalleryIndex];
                 
-                // Actualizar estilo visual de los puntos de la galería
                 dots.forEach((dot, index) => {
                     if (index === activeGalleryIndex) {
                         dot.className = "gallery-dot w-8 h-2 rounded-full cursor-pointer transition-all duration-300 bg-bronze-500";
@@ -699,6 +780,7 @@
             }, 200);
         }
 
+        // CONTROL DEL CARRUSEL DE FOTOS Siguiente/Anterior
         function nextGalleryImage() {
             const proj = proyectos[activeProjectIndex];
             activeGalleryIndex = (activeGalleryIndex === proj.galeria.length - 1) ? 0 : activeGalleryIndex + 1;
@@ -716,7 +798,266 @@
             updateGalleryUI();
         }
 
-        // RENDERIZADOR DEL PLANO DE LOTES EN TIEMPO REAL
+        // GENERADOR DE PROYECCIÓN DIAGONAL CON PERPENDICULARIDAD REAL AL 100% (SEGÚN PLANO EN PDF)
+        function renderSVGMap(filter = 'todos') {
+            const container = document.getElementById('plano-interactive-view');
+            const proj = proyectos[activeProjectIndex];
+            
+            // Si no estamos en Valle Sicaya I, usamos la visualización alternativa estilizada para Etapas II o III
+            if (activeProjectIndex !== 0) {
+                renderStylizedGenericSVG(container, proj, filter);
+                return;
+            }
+
+            // --- LÓGICA DE PRECISIÓN MILIMÉTRICA PERPENDICULAR PARA VALLE SICAYA I ---
+            const viewWidth = 1000;
+            const viewHeight = 440;
+            
+            // Ecuación de la Calle 01 (Línea guía superior diagonal inclinada)
+            // m (pendiente) = -0.0889. Como y en SVG aumenta hacia abajo, esta pendiente negativa
+            // hace que la calle vaya subiendo levemente de izquierda a derecha.
+            const baseStartX = 50;
+            const baseStartY = 180;
+            const slope = -0.0889; 
+
+            function getYTop(x) {
+                return baseStartY + (x - baseStartX) * slope;
+            }
+
+            // Para que la división de cada lote sea 100% perpendicular a la calle:
+            // El vector de la calle es (1, slope).
+            // El vector perpendicular hacia abajo es (-slope, 1) = (0.0889, 1).
+            // Para una altura vertical del bloque de H = 80 píxeles, el desplazamiento en X (offset)
+            // para mantener la perpendicularidad matemática exacta debe ser: offset_x = -slope * H.
+            const lotHeight = 80;
+            const perpOffset = -slope * lotHeight; // ~7.11 píxeles
+
+            let svgHTML = `<svg viewBox="0 0 ${viewWidth} ${viewHeight}" class="w-full h-full select-none" xmlns="http://www.w3.org/2000/svg" style="background-color: #fafaf9; border-radius: 12px;">`;
+
+            // DECORACIÓN DE INFRAESTRUCTURA (Vías, calles y rosa de vientos)
+            svgHTML += `
+                <!-- CALLE 01 (Frontera superior de toda la lotización) -->
+                <path d="M 0,${getYTop(0) - 10} L ${viewWidth},${getYTop(viewWidth) - 10} L ${viewWidth},${getYTop(viewWidth) - 35} L 0,${getYTop(0) - 35} Z" fill="#e2e8f0" opacity="0.85" />
+                <path d="M 0,${getYTop(0) - 10} L ${viewWidth},${getYTop(viewWidth) - 10}" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5" />
+                <text x="300" y="${getYTop(300) - 18}" fill="#475569" font-size="10" font-weight="extrabold" transform="rotate(-5, 300, ${getYTop(300) - 18})" text-anchor="middle" letter-spacing="2">-- CALLE 01 --</text>
+            `;
+
+            svgHTML += `
+                <!-- CALLE 02 (Calle divisoria real entre Manzana B y A) -->
+                <path d="M 464,${getYTop(464) - 25} L 500,${getYTop(500) - 25} L 507,${getYTop(500) + 95} L 471,${getYTop(464) + 95} Z" fill="#e2e8f0" opacity="0.85" />
+                <text x="483" y="${getYTop(483) + 40}" fill="#475569" font-size="9" font-weight="black" transform="rotate(85, 483, ${getYTop(483) + 40})" text-anchor="middle" letter-spacing="1">CALLE 02</text>
+            `;
+
+            svgHTML += `
+                <!-- CAMINO EXISTENTE (Límite extremo diagonal derecho) -->
+                <path d="M 935,0 L 1000,0 L 1000,${viewHeight} L 895,${viewHeight} Z" fill="#cbd5e1" opacity="0.75" />
+                <text x="965" y="220" fill="#334155" font-size="11" font-weight="black" transform="rotate(85, 965, 220)" text-anchor="middle" letter-spacing="2">CAMINO EXISTENTE</text>
+                
+                <!-- Rosa de los vientos / Norte oficial de ingeniería -->
+                <g transform="translate(60, 80)" opacity="0.85">
+                    <circle cx="0" cy="0" r="18" fill="none" stroke="#1b3d33" stroke-width="1.5"/>
+                    <line x1="0" y1="18" x2="0" y2="-18" stroke="#1b3d33" stroke-width="2"/>
+                    <polygon points="0,-18 -5,-8 5,-8" fill="#1b3d33"/>
+                    <text x="0" y="-22" fill="#1b3d33" font-size="10" font-weight="black" text-anchor="middle">N</text>
+                </g>
+            `;
+
+            // CONSTRUIR MANZANA B (Izquierda: Lotes del 10 al 01 en sentido este)
+            proj.lotes.forEach(lote => {
+                if (lote.manzana !== 'B') return;
+                if (filter !== 'todos' && lote.estado !== filter) return;
+
+                const x1_top = getLoteX('B', lote.numero);
+                const nextNum = (parseInt(lote.numero) - 1).toString().padStart(2, '0');
+                const x2_top = getLoteX('B', nextNum);
+
+                const y1_top = getYTop(x1_top);
+                const y2_top = getYTop(x2_top);
+
+                // Coordenadas inferiores calculadas con el vector normal perpendicular
+                const x1_bottom = x1_top + perpOffset;
+                const x2_bottom = x2_top + perpOffset;
+                const y1_bottom = y1_top + lotHeight;
+                const y2_bottom = y2_top + lotHeight;
+
+                // Armamos el polígono perfectamente perpendicular a Calle 01
+                const pointsStr = `${x1_top},${y1_top} ${x2_top},${y2_top} ${x2_bottom},${y2_bottom} ${x1_bottom},${y1_bottom}`;
+
+                let { fillColor, strokeColor, fillOpacity } = getLoteColorAndOpacity(lote);
+                const isSelected = loteSeleccionado && loteSeleccionado.id === lote.id;
+                let strokeWidth = isSelected ? "3.5" : "1.2";
+                if (isSelected) {
+                    strokeColor = "#c58e5a";
+                    fillOpacity = "0.95";
+                }
+
+                const centerX = (x1_top + x2_top + x1_bottom + x2_bottom) / 4;
+                const centerY = (y1_top + y2_top + y1_bottom + y2_bottom) / 4;
+
+                svgHTML += `
+                    <g id="svg-lote-${lote.id}" class="cursor-pointer" onclick="selectLoteFromSVG(${lote.id})">
+                        <polygon points="${pointsStr}" 
+                                 fill="${fillColor}" 
+                                 fill-opacity="${fillOpacity}" 
+                                 stroke="${strokeColor}" 
+                                 stroke-width="${strokeWidth}" />
+                        
+                        <text x="${centerX}" y="${centerY - 3}" 
+                              fill="#1e293b" 
+                              font-size="6.5" 
+                              font-weight="bold" 
+                              text-anchor="middle"
+                              class="pointer-events-none">Mza ${lote.manzana}</text>
+                              
+                        <text x="${centerX}" y="${centerY + 7}" 
+                              fill="#0f172a" 
+                              font-size="9" 
+                              font-weight="black" 
+                              text-anchor="middle"
+                              class="pointer-events-none">${lote.numero}</text>
+                    </g>
+                `;
+            });
+
+            // CONSTRUIR MANZANA A (Derecha: Lotes del 10 al 01 en sentido este colindando con el Camino)
+            proj.lotes.forEach(lote => {
+                if (lote.manzana !== 'A') return;
+                if (filter !== 'todos' && lote.estado !== filter) return;
+
+                let pointsStr = "";
+                let centerX, centerY;
+
+                // CASO ESPECIAL: Lotes A-01 y A-02 están apilados horizontalmente dividiendo la altura total.
+                // Ambos tocan el límite izquierdo (Lote 03) y se extienden al Camino Existente de forma diagonal.
+                if (lote.numero === '01' || lote.numero === '02') {
+                    // El límite izquierdo de este bloque es el final del lote 03 (x = 824)
+                    const xLeft_top = getLoteX('A', '02');
+                    const yLeft_top = getYTop(xLeft_top);
+                    const xLeft_bottom = xLeft_top + perpOffset;
+                    const yLeft_bottom = yLeft_top + lotHeight;
+
+                    // Para la alineación perfecta del extremo derecho con el Camino Existente:
+                    // El borde izquierdo del camino conecta (935, 0) con (895, 440).
+                    // Pendiente del camino (slope_road) = (895 - 935) / 440 = -40 / 440. Intercepto = 935.
+                    // Resolvemos la intersección exacta de la calle 01 y el camino:
+                    const slope_road = -40 / 440;
+                    const x_road_intercept = 935;
+
+                    // Esquinas derechas matemáticas alineadas de forma 100% recta a la carretera:
+                    const yRight_top = (baseStartY + slope * (x_road_intercept - baseStartX)) / (1 - slope * slope_road);
+                    const xRight_top = x_road_intercept + slope_road * yRight_top;
+
+                    const yRight_bottom = (baseStartY + lotHeight + slope * (x_road_intercept - perpOffset - baseStartX)) / (1 - slope * slope_road);
+                    const xRight_bottom = x_road_intercept + slope_road * yRight_bottom;
+
+                    // Puntos medios verticales que dividen a los dos lotes longitudinalmente
+                    const xLeft_mid = (xLeft_top + xLeft_bottom) / 2;
+                    const yLeft_mid = (yLeft_top + yLeft_bottom) / 2;
+
+                    const xRight_mid = (xRight_top + xRight_bottom) / 2;
+                    const yRight_mid = (yRight_top + yRight_bottom) / 2;
+
+                    if (lote.numero === '01') {
+                        // LOTE A-01: Porción Superior del bloque (Colinda con la Calle 01 y sale al Camino Existente por el extremo derecho)
+                        pointsStr = `${xLeft_top},${yLeft_top} ${xRight_top},${yRight_top} ${xRight_mid},${yRight_mid} ${xLeft_mid},${yLeft_mid}`;
+                        centerX = (xLeft_top + xRight_top + xRight_mid + xLeft_mid) / 4;
+                        centerY = (yLeft_top + yRight_top + yRight_mid + yLeft_mid) / 4;
+                    } else {
+                        // LOTE A-02: Porción Inferior del bloque (Colinda con el límite inferior del plano y sale al Camino Existente por el extremo derecho)
+                        pointsStr = `${xLeft_mid},${yLeft_mid} ${xRight_mid},${yRight_mid} ${xRight_bottom},${yRight_bottom} ${xLeft_bottom},${yLeft_bottom}`;
+                        centerX = (xLeft_mid + xRight_mid + xRight_bottom + xLeft_bottom) / 4;
+                        centerY = (yLeft_mid + yRight_mid + yRight_bottom + yLeft_bottom) / 4;
+                    }
+                } else {
+                    // Lotes Regulares del 10 al 03 en la Manzana A (100% Perpendiculares)
+                    const x1_top = getLoteX('A', lote.numero);
+                    const nextNum = (parseInt(lote.numero) - 1).toString().padStart(2, '0');
+                    const x2_top = getLoteX('A', nextNum);
+
+                    const y1_top = getYTop(x1_top);
+                    const y2_top = getYTop(x2_top);
+
+                    const x1_bottom = x1_top + perpOffset;
+                    const x2_bottom = x2_top + perpOffset;
+                    const y1_bottom = y1_top + lotHeight;
+                    const y2_bottom = y2_top + lotHeight;
+
+                    pointsStr = `${x1_top},${y1_top} ${x2_top},${y2_top} ${x2_bottom},${y2_bottom} ${x1_bottom},${y1_bottom}`;
+                    centerX = (x1_top + x2_top + x1_bottom + x2_bottom) / 4;
+                    centerY = (y1_top + y2_top + y1_bottom + y2_bottom) / 4;
+                }
+
+                let { fillColor, strokeColor, fillOpacity } = getLoteColorAndOpacity(lote);
+                const isSelected = loteSeleccionado && loteSeleccionado.id === lote.id;
+                let strokeWidth = isSelected ? "3.5" : "1.2";
+                if (isSelected) {
+                    strokeColor = "#c58e5a";
+                    fillOpacity = "0.95";
+                }
+
+                svgHTML += `
+                    <g id="svg-lote-${lote.id}" class="cursor-pointer" onclick="selectLoteFromSVG(${lote.id})">
+                        <polygon points="${pointsStr}" 
+                                 fill="${fillColor}" 
+                                 fill-opacity="${fillOpacity}" 
+                                 stroke="${strokeColor}" 
+                                 stroke-width="${strokeWidth}" />
+                        
+                        <text x="${centerX}" y="${centerY - 3}" 
+                              fill="#1e293b" 
+                              font-size="6.5" 
+                              font-weight="bold" 
+                              text-anchor="middle"
+                              class="pointer-events-none">Mza ${lote.manzana}</text>
+                              
+                        <text x="${centerX}" y="${centerY + 7}" 
+                              fill="#0f172a" 
+                              font-size="9" 
+                              font-weight="black" 
+                              text-anchor="middle"
+                              class="pointer-events-none">${lote.numero}</text>
+                    </g>
+                `;
+            });
+
+            // Nombres e identificadores gigantes de Manzanas físicas de fondo
+            svgHTML += `
+                <text x="260" y="${getYTop(260) + 115}" fill="#c58e5a" font-size="14" font-weight="extrabold" text-anchor="middle" class="pointer-events-none" opacity="0.8">MANZANA "B"</text>
+                <text x="680" y="${getYTop(680) + 115}" fill="#c58e5a" font-size="14" font-weight="extrabold" text-anchor="middle" class="pointer-events-none" opacity="0.8">MANZANA "A"</text>
+            `;
+
+            svgHTML += `</svg>`;
+            container.innerHTML = svgHTML;
+        }
+
+        // FUNCIÓN AUXILIAR DE PALETA DE COLORES DE ACUERDO AL ESTADO
+        function getLoteColorAndOpacity(lote) {
+            let fillColor = "#10b981"; // Disponible (Esmeralda)
+            let strokeColor = "#047857";
+            let fillOpacity = "0.75";
+            
+            if (lote.estado === 'separado') {
+                fillColor = "#f59e0b"; // Separado (Ámbar)
+                strokeColor = "#b45309";
+                fillOpacity = "0.8";
+            } else if (lote.estado === 'vendido') {
+                fillColor = "#f43f5e"; // Vendido (Fucsia)
+                strokeColor = "#be123c";
+                fillOpacity = "0.45";
+            }
+            return { fillColor, strokeColor, fillOpacity };
+        }
+
+        // SELECCIONAR UN LOTE DESDE EL CLIC EN EL SVG
+        function selectLoteFromSVG(id) {
+            const proj = proyectos[activeProjectIndex];
+            const lote = proj.lotes.find(l => l.id === id);
+            if (lote && lote.estado !== 'vendido') {
+                selectLote(lote);
+            }
+        }
+
+        // RENDERIZADOR CLÁSICO DEL GRID DE BOTONES (Vista de pestañas alternativa)
         function renderMap(filter = 'todos') {
             const grid = document.getElementById('mapa-grid');
             grid.innerHTML = '';
@@ -726,12 +1067,10 @@
             proj.lotes.forEach(lote => {
                 if (filter !== 'todos' && lote.estado !== filter) return;
 
-                // Color según estado
                 let bgClass = 'bg-emerald-500 text-white hover:bg-emerald-600';
                 if (lote.estado === 'separado') bgClass = 'bg-amber-500 text-white hover:bg-amber-600';
                 if (lote.estado === 'vendido') bgClass = 'bg-rose-500 text-white cursor-not-allowed opacity-60';
 
-                // Añadir anillo extra si está seleccionado
                 const ringClass = (loteSeleccionado && loteSeleccionado.id === lote.id) ? 'ring-4 ring-offset-2 ring-bronze-500 scale-105 z-10' : '';
 
                 const btn = document.createElement('button');
@@ -739,9 +1078,7 @@
                 btn.innerHTML = `<span class="text-[10px] text-white/80 font-normal">Mza ${lote.manzana}</span><span class="text-base">${lote.numero}</span>`;
                 
                 btn.onclick = () => {
-                    if (lote.estado === 'vendido') {
-                        return; // Evita seleccionar lotes ya vendidos
-                    }
+                    if (lote.estado === 'vendido') return;
                     selectLote(lote);
                 };
 
@@ -749,14 +1086,13 @@
             });
         }
 
-        // SELECCIONAR UN LOTE DE FORMA INTERACTIVA
+        // SELECCIONAR UN LOTE DE FORMA INTERACTIVA (Sincronizado)
         function selectLote(lote) {
             loteSeleccionado = lote;
             
             const descuento = 2000;
             const precioFinal = Math.max(0, lote.precio - descuento);
 
-            // Actualizar panel lateral de detalles de compra al contado
             document.getElementById('lote-num').innerText = lote.numero;
             document.getElementById('lote-mza').innerText = lote.manzana;
             document.getElementById('lote-area').innerText = lote.area;
@@ -773,32 +1109,89 @@
                 badge.className = 'bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider';
             }
 
-            // Enlace de WhatsApp con número oficial Mayli: 991715119
             const btnWsp = document.getElementById('lote-whatsapp-btn');
             const wspMsg = encodeURIComponent(`Hola Mayli, deseo recibir información de compra al contado para el Lote ${lote.numero} de la Manzana ${lote.manzana} en ${proyectos[activeProjectIndex].nombre}. Dimensiones: ${lote.area} m2. Precio de lista: S/ ${lote.precio.toLocaleString('es-PE')} - Descuento: S/ 2,000. ¡Precio Final Promocional: S/ ${precioFinal.toLocaleString('es-PE')}! ¿Sigue disponible para agendar visita?`);
             btnWsp.href = `https://wa.me/51991715119?text=${wspMsg}`;
 
-            // Re-renderizar mapa para reflejar el borde de selección activo
-            renderMap(currentFilter);
+            if (activeView === 'plano') {
+                renderSVGMap(currentFilter);
+            } else {
+                renderMap(currentFilter);
+            }
         }
 
-        // FILTRADO DINÁMICO DE LOTES (SOPORTE PARA BOTONES ADAPTADO)
+        // FILTRADO DINÁMICO DE LOTES
         function filterLots(filter) {
             currentFilter = filter;
             
-            // Reestablecer estilos de botones de filtro
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.className = "filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-all";
             });
 
-            // Dar estilo de botón activo al botón pulsado
             const activeBtn = event.currentTarget || event.target;
             if (activeBtn && activeBtn.classList) {
                 activeBtn.className = "filter-btn active bg-forest-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition-all";
             }
 
             renderMap(filter);
+            renderSVGMap(filter);
+        }
+
+        // RENDERIZADOR DE PLANO INTERACTIVO AUXILIAR ESTILIZADO PARA ETAPAS II Y III
+        function renderStylizedGenericSVG(container, proj, filter) {
+            let svgHTML = `<svg viewBox="0 0 700 350" class="w-full h-full select-none" xmlns="http://www.w3.org/2000/svg" style="background-color: #fafaf9; border-radius: 12px;">`;
+            
+            svgHTML += `
+                <rect x="0" y="140" width="700" height="45" fill="#e2e8f0" />
+                <line x1="0" y1="162" x2="700" y2="162" stroke="#cbd5e1" stroke-dasharray="4,6" stroke-width="1.5" />
+                <text x="350" y="166" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">CALLE PROYECTADA PRINCIPAL ETAPA ${activeProjectIndex + 1}</text>
+            `;
+
+            let currentX = 50;
+            proj.lotes.forEach((lote, index) => {
+                if (filter !== 'todos' && lote.estado !== filter) return;
+
+                const yOffset = index < 5 ? 40 : 205;
+                const xCoord = index < 5 ? currentX + (index * 110) : currentX + ((index - 5) * 110);
+                
+                const pointsStr = `${xCoord},${yOffset + 80} ${xCoord + 95},${yOffset + 80} ${xCoord + 115},${yOffset} ${xCoord + 20},${yOffset}`;
+
+                let { fillColor, strokeColor, fillOpacity } = getLoteColorAndOpacity(lote);
+                const isSelected = loteSeleccionado && loteSeleccionado.id === lote.id;
+                let strokeWidth = isSelected ? "3.5" : "1.2";
+                if (isSelected) {
+                    strokeColor = "#c58e5a";
+                    fillOpacity = "0.95";
+                }
+
+                svgHTML += `
+                    <g id="svg-lote-${lote.id}" class="cursor-pointer" onclick="selectLoteFromSVG(${lote.id})">
+                        <polygon points="${pointsStr}" 
+                                 fill="${fillColor}" 
+                                 fill-opacity="${fillOpacity}" 
+                                 stroke="${strokeColor}" 
+                                 stroke-width="${strokeWidth}" />
+                        
+                        <text x="${xCoord + 57}" y="${yOffset + 35}" 
+                              fill="#1e293b" 
+                              font-size="7.5" 
+                              font-weight="bold" 
+                              text-anchor="middle"
+                              class="pointer-events-none">Mza ${lote.manzana}</text>
+                              
+                        <text x="${xCoord + 57}" y="${yOffset + 54}" 
+                              fill="#0f172a" 
+                              font-size="11" 
+                              font-weight="black" 
+                              text-anchor="middle"
+                              class="pointer-events-none">${lote.numero}</text>
+                    </g>
+                `;
+            });
+
+            svgHTML += `</svg>`;
+            container.innerHTML = svgHTML;
         }
 
         // Inicialización al cargar la ventana
@@ -806,7 +1199,6 @@
             updateProjectUI();
             updateGalleryUI();
             
-            // Retardo de 1 segundo para mostrar el pop-up de forma elegante
             setTimeout(showModal, 1000);
         };
     </script>
